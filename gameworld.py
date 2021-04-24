@@ -22,6 +22,23 @@ def get_start_props():
     return json.load(open("start_properties.json", "r"))
 
 
+class AnimalEnv:
+
+    env_map = []
+
+    def __init__(self, size):
+        self.env_map = [[None for _ in range(size[1])] for _ in range(size[0])]
+
+    def put_element(self, el, pos):
+        self.env_map[pos[0]][pos[1]] = el
+
+    def remove_element(self, pos):
+        self.env_map[pos[0]][pos[1]] = None
+
+    def get_element(self, pos):
+        return self.env_map[pos[0]][pos[1]]
+
+
 class Animal:
     genotype = 0
     genotype_len = 0
@@ -47,10 +64,15 @@ class Animal:
             animal_action(self, i, attr)
 
 
+    def draw(self, screen):
+        pass
+
+
 class Game:
 
     animal_list = []
     ended = False
+    env = None
 
 
     def __init__(self, animal_count, **kwargs):
@@ -59,6 +81,8 @@ class Game:
 
         for i in range(animal_count):
             self.animal_list.append(Animal())
+
+        self.env = AnimalEnv()
 
 
     def update(self, screen, **kwargs):

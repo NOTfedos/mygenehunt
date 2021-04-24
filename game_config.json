@@ -1,0 +1,8 @@
+{
+  "START_ANIMAL_COUNT": 50,
+  "GENOTYPE_LEN": 16,
+  "GEN_LEN": 4,
+  "FIELD_SIZE": [50, 50],
+  "BLOCK_SIZE": 10,
+  "SCREEN_SIZE": [700, 700]
+}

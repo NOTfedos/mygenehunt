@@ -1,12 +1,17 @@
 import pygame
-from gameworld import game
+from gamefile import game
+import json
+
+
+cfg_data = json.load(open("game_config.json", "r"))
+SCREEN_SIZE = cfg_data["SCREEN_SIZE"]
 
 
 def main():
     pygame.init()
     running = True
 
-    screen = pygame.display.set_mode((1600, 900))
+    screen = pygame.display.set_mode(SCREEN_SIZE)
 
     # игровой цикл
     while running:

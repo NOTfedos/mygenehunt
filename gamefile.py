@@ -19,6 +19,7 @@ class Game:
 
         for i in range(animal_count):
             self.animal_list.append(Animal(
+                None,
                 pos=(randint(0, FIELD_SIZE[0]), randint(0, FIELD_SIZE[1])),
                 pix_by_x=BLOCK_SIZE
             ))
